@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LA VIE EN ROSE</title>
+    <!-- Google Fonts aquí -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- HEADER amb navegació -->
+    <header>
+        <nav>
+            <div class="logo">LA VIE EN ROSE</div>
+            <ul class="nav-menu">
+                <li><a href="#inici">Inici</a></li>
+                <li><a href="#sobre-nosaltres">Sobre nosaltres</a></li>
+                <li><a href="#menu">Menú</a></li>
+                <li><a href="#reserva">Reserva</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inici" class="hero">
+        <h1>"Dolçor artesanal, elegància francesa."</h1>
+        <p>Endinsa't en un raconet de París on l'artesania i l'elegància es troben. Un espai càlid i romàntic dissenyat per gaudir de la millor alta pastisseria francesa: des de delicats macarons i croissants cruixents fins a dolços artesanals elaborats amb tota la passió.</p>
+        <a href="#reserva" class="btn-primary">Reserva ara</a>
+    </section>
+
+    <!-- SOBRE NOSALTRES -->
+    <section id="sobre-nosaltres" class="about">
+        <h2>Sobre nosaltres</h2>
+        <p>Història: Nascuda de la passió per la tradició parisenca, la nostra pastisseria combina receptes ancestrals i l'alta d'artesania per portar el caliu de París a cada mossegada.</p>
+        <p>Filosofia: Creiem en l'excel·lència dels detalls, seleccionant ingredients d'alta qualitat per oferir un refugi elegant i romàntic on cada dolç sigui una experiència inoblidable.</p>
+    </section>
+
+    <!-- DESTACATS DEL MENÚ -->
+    <section id="menu" class="menu-highlight">
+        <h2>Els nostres plats</h2>
+        <div class="dishes">
+            <div class="dish-card">
+                <h3>Plat: Croissant d'Or i Vainilla de Madagascar</h3>
+                <p>Descripció: Croissant artesanal de mantega de Charentes-Poitou, daurat al forn, farcit amb una delicada crema cremosa de vainilla natural i decorat amb un subtil toc de pols d'or comestible.</p>
+                <span class="price">7,5€</span>
+            </div>
+            <div class="dish-card">
+                <h3>Saint-Honoré Rosé i Lavanda</h3>
+                <p>Descripció: Base de pasta de full cruixent i petites lioneses caramel·litzades, farcides de crema xantillí d'aigua de roses i infusió delicada de lavanda, coronada amb un toc de gerds frescos.</p>
+                <span class="price">10,5€</span>
+            </div>
+            <div class="dish-card">
+                <h3>Mille-Feuille de Violeta i Gerd</h3>
+                <p>Descripció: Capes fines i cruixents de pasta de full caramel·litzada, entrellaçades amb una lleugera crema diplomàtica aromàtica de violeta i un cor de coulis de gerd silvestre.</p>
+                <span class="price">12,5€</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARI DE RESERVA -->
+    <section id="reserva" class="reservation">
+        <h2>Reserva la teva taula</h2>
+        <form>
+            <label for="name">Nom complet</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="date">Data</label>
+            <input type="date" id="date" name="date" required>
+            
+            <label for="time">Hora</label>
+            <input type="time" id="time" name="time" required>
+            
+            <label for="guests">Número de persones</label>
+            <select id="guests" name="guests">
+                <option value="1">1 persona</option>
+                <option value="2">2 persones</option>
+                <option value="3">3 persones</option>
+                <option value="4">4 persones</option>
+                <option value="5">5+ persones</option>
+            </select>
+            
+            <button type="submit" class="btn-primary">Confirmar reserva</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 LA VIE EN ROSE. Tots els drets reservats.</p>
+        <p> 4 Rue Royale, 75008 París, França | Tel: +33 1 42 60 21 79</p>
+    </footer>
+</body>
+</html>
