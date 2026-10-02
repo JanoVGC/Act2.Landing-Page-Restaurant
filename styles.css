@@ -153,30 +153,36 @@ nav {
   line-height: 1.7;
 }
 
-.hero .btn-primary {
-  display: inline-block;
-  padding: 14px 30px;
-  border: 2px solid var(--primary-color);
-  border-radius: 999px;
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  text-decoration: none;
-  transition: background-color 180ms ease, color 180ms ease;
-}
-
-.hero .btn-primary:hover,
-.hero .btn-primary:focus-visible {
-  background-color: var(--accent-color);
-  color: var(--primary-color);
-}
-
-
-
 /* ============================================
    BOTONS
    ============================================ */
 
 /* Afegeix aquí els estils dels botons */
+
+.btn-primary {
+  display: inline-block;
+  padding: 14px 30px;
+  border: 2px solid var(--accent-color);
+  border-radius: 999px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  font: inherit;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 12%);
+  transition: background-color 180ms ease, color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  transform: translateY(-2px);
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  box-shadow: 0 7px 16px rgb(0 0 0 / 18%);
+}
+
+
 
 
 /* ============================================
@@ -185,6 +191,9 @@ nav {
 
 /* Afegeix aquí els estils de .about */
 
+.about p {
+  color: #ffffff;
+}
 
 /* ============================================
    DESTACATS DEL MENÚ
