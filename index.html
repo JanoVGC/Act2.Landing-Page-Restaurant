@@ -71,29 +71,39 @@
     <!-- FORMULARI DE RESERVA -->
     <section id="reserva" class="reservation">
         <h2>Reserva la teva taula</h2>
-        <form>
-            <label for="name">Nom complet</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="date">Data</label>
-            <input type="date" id="date" name="date" required>
-            
-            <label for="time">Hora</label>
-            <input type="time" id="time" name="time" required>
-            
-            <label for="guests">Número de persones</label>
-            <select id="guests" name="guests">
-                <option value="1">1 persona</option>
-                <option value="2">2 persones</option>
-                <option value="3">3 persones</option>
-                <option value="4">4 persones</option>
-                <option value="5">5+ persones</option>
-            </select>
-            
-            <button type="submit" class="btn-primary">Confirmar reserva</button>
+        <form class="reservation-form">
+            <div class="form-group">
+                <label for="name">Nom complet</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Data</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="time">Hora</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+
+            <div class="form-group">
+                <label for="guests">Número de persones</label>
+                <select id="guests" name="guests">
+                    <option value="1">1 persona</option>
+                    <option value="2">2 persones</option>
+                    <option value="3">3 persones</option>
+                    <option value="4">4 persones</option>
+                    <option value="5">5+ persones</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-primary submit-btn">Confirmar reserva</button>
         </form>
     </section>
 

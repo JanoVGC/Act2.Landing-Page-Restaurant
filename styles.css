@@ -289,11 +289,97 @@ nav {
    FORMULARI DE RESERVA
    ============================================ */
 
-/* Afegeix aquí els estils del formulari */
+.reservation {
+  width: min(1100px, 90%);
+  margin: 64px auto;
+  padding: 32px 24px 40px;
+  border: 2px solid rgb(197 160 89 / 45%);
+  border-radius: 24px;
+  background: rgba(244, 225, 230, 0.08);
+  box-shadow: 0 12px 32px rgb(0 0 0 / 10%);
+}
+
+.reservation h2 {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.reservation-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 24px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reservation-form label {
+  color: var(--secondary-color);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.reservation-form input,
+.reservation-form select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid rgb(197 160 89 / 60%);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--primary-color);
+  font: inherit;
+  box-sizing: border-box;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.reservation-form input:focus,
+.reservation-form select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 4px rgb(197 160 89 / 22%);
+}
+
+.submit-btn {
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin-top: 8px;
+  min-width: 240px;
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.submit-btn:hover,
+.submit-btn:focus-visible {
+  background-color: #b88e3d;
+  color: #fffaf7;
+}
+
+@media (max-width: 700px) {
+  .reservation-form {
+    grid-template-columns: 1fr;
+  }
+}
 
 
 /* ============================================
    FOOTER
    ============================================ */
 
-/* Afegeix aquí els estils del footer */
+footer {
+  padding: 28px 20px 36px;
+  text-align: center;
+  color: #ffffff;
+}
+
+footer p {
+  margin: 8px 0;
+  color: #ffffff;
+  line-height: 1.6;
+}
