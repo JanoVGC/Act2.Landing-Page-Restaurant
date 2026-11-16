@@ -40,8 +40,15 @@
     <!-- DESTACATS DEL MENÚ -->
     <section id="menu" class="menu-highlight">
         <h2>Els nostres plats</h2>
-        <div class="dishes">
-            <article class="dish-card">
+        <div class="category-filters">
+            <div class="filters" role="group" aria-label="Categories del menú">
+                <button class="filter-btn active" type="button" data-category="tots" aria-pressed="true" aria-controls="llista-plats">Tots</button>
+                <button class="filter-btn" type="button" data-category="croissants" aria-pressed="false" aria-controls="llista-plats">Croissants</button>
+                <button class="filter-btn" type="button" data-category="pastissos" aria-pressed="false" aria-controls="llista-plats">Pastissos</button>
+            </div>
+        </div>
+        <div class="dishes" id="llista-plats">
+            <article class="dish-card" data-category="croissants">
                 <img class="dish-image" src="assets/croissant%20con%20fokin%20cafe%20panza%20panza%20panza.png" alt="Croissant amb cafè">
                 <div class="dish-content">
                     <h3>Croissant d'Or i Vainilla de Madagascar</h3>
@@ -49,7 +56,7 @@
                     <span class="price">7,5€</span>
                 </div>
             </article>
-            <article class="dish-card">
+            <article class="dish-card" data-category="pastissos">
                 <img class="dish-image" src="assets/autobus%20londinense%20pero%20de%20azucar.png" alt="Saint-Honoré rosat">
                 <div class="dish-content">
                     <h3>Saint-Honoré Rosé i Lavanda</h3>
@@ -57,7 +64,7 @@
                     <span class="price">10,5€</span>
                 </div>
             </article>
-            <article class="dish-card">
+            <article class="dish-card" data-category="pastissos">
                 <img class="dish-image" src="assets/aixo%20ns%20que%20cony%20es%20pero%20te%20pinton.png" alt="Mille-feuille de violeta i gerd">
                 <div class="dish-content">
                     <h3>Mille-Feuille de Violeta i Gerd</h3>
@@ -112,5 +119,30 @@
         <p>&copy; 2024 LA VIE EN ROSE. Tots els drets reservats.</p>
         <p> 4 Rue Royale, 75008 París, França | Tel: +33 1 42 60 21 79</p>
     </footer>
+
+
+    <!-- Fragment de JavaScript extret d'IA (Github Copilot) per fer funcional el filtre de croissants i pastissos-->
+    <script>
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const dishCards = document.querySelectorAll(".dish-card");
+
+        filterButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const selectedCategory = button.dataset.category;
+
+                filterButtons.forEach((filterButton) => {
+                    const isActive = filterButton === button;
+                    filterButton.classList.toggle("active", isActive);
+                    filterButton.setAttribute("aria-pressed", String(isActive));
+                });
+
+                dishCards.forEach((card) => {
+                    card.hidden =
+                        selectedCategory !== "tots" &&
+                        card.dataset.category !== selectedCategory;
+                });
+            });
+        });
+    </script>
 </body>
 </html>

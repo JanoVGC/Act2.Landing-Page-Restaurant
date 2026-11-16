@@ -214,6 +214,41 @@ nav {
    DESTACATS DEL MENÚ
    ============================================ */
 
+/* Filtres de categoria: permet embolcar els botons en pantalles estretes. */
+.category-filters {
+  margin-bottom: 32px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  border: 1px solid var(--accent-color);
+  border-radius: 999px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  transform: translateY(-2px);
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.filter-btn:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
 /* Contenidor dels destacats: limita l'amplada i centra la secció. */
 .menu-highlight {
   width: min(1100px, 90%); /* Tria la mida menor entre 1100 píxels i el 90% de la pantalla. */
