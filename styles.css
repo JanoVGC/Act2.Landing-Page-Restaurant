@@ -131,6 +131,11 @@ nav {
 
 /* Hero: panell introductori centrat amb espai generós i fons clar. */
 .hero {
+  display: flex; /* Organitza el contingut del hero amb Flexbox. */
+  min-height: 360px; /* Reserva alçada per centrar verticalment el contingut. */
+  flex-direction: column; /* Apila el títol, el text i el botó. */
+  align-items: center; /* Centra horitzontalment els elements del hero. */
+  justify-content: center; /* Centra verticalment els elements del hero. */
   width: 90%; /* Ocupa la major part de l'amplada disponible. */
   max-width: 1100px; /* Evita que el panell es faci massa ample en pantalles grans. */
   margin: 48px auto; /* Separa el panell verticalment i el centra horitzontalment. */
