@@ -262,15 +262,18 @@ nav {
   color: var(--secondary-color); /* Aplica el color clar del tema. */
 }
 
-/* Graella de plats: crea tres columnes iguals amb espai entre targetes. */
+/* Graella de plats: Flexbox distribueix les targetes i les passa a altres files. */
 .dishes {
-  display: grid; /* Activa el disseny de graella per a les targetes. */
-  grid-template-columns: repeat(3, minmax(0, 1fr)); /* Crea tres columnes iguals que poden encongir-se sense desbordar. */
-  gap: 28px; /* Separa les files i les columnes de la graella. */
+  display: flex; /* Organitza les targetes amb Flexbox. */
+  flex-wrap: wrap; /* Permet que les targetes passin a altres files segons l'espai disponible. */
+  justify-content: center; /* Centra les targetes de cada fila. */
+  gap: 28px; /* Separa les files i les targetes. */
 }
 
 /* Targeta d'un plat: agrupa la imatge i el contingut dins un panell amb ombra. */
 .dish-card {
+  flex: 1 1 300px; /* Permet que les targetes creixin, s'encongeixin i s'ajustin a l'amplada disponible. */
+  min-width: 0; /* Evita que el contingut impedeixi que la targeta s'encongeixi. */
   overflow: hidden; /* Retalla el contingut que sobresurti de les cantonades arrodonides. */
   background: color-mix(in srgb, var(--white-color) 96%, transparent); /* Crea un fons blanc lleugerament transparent. */
   border: 1px solid color-mix(in srgb, var(--accent-color) 35%, transparent); /* Dibuixa una vora daurada subtil. */
@@ -332,14 +335,6 @@ nav {
   color: var(--primary-color); /* Aplica el color principal al text del preu. */
   font-weight: 700; /* Ressalta el preu amb un pes de lletra fort. */
 }
-
-/* Graella dels plats en pantalles mitjanes o petites: apila les targetes. */
-@media (max-width: 820px) {
-  .dishes {
-    grid-template-columns: 1fr; /* Substitueix les tres columnes per una sola columna. */
-  }
-}
-
 
 /* ============================================
    FORMULARI DE RESERVA
