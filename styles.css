@@ -273,7 +273,9 @@ nav {
 
 /* Targeta d'un plat: agrupa la imatge i el contingut dins un panell amb ombra. */
 .dish-card {
-  flex: 1 1 300px; /* Permet que les targetes creixin, s'encongeixin i s'ajustin a l'amplada disponible. */
+  flex: 1 1 calc((100% - 56px) / 3); /* Reserva espai per a tres targetes i les separacions de la fila. */
+  max-width: calc((100% - 56px) / 3); /* Evita que una fila incompleta estiri massa les targetes. */
+  box-sizing: border-box; /* Inclou la vora dins l'amplada calculada de la targeta. */
   min-width: 0; /* Evita que el contingut impedeixi que la targeta s'encongeixi. */
   display: flex; /* Organitza la imatge i el contingut dins la targeta. */
   flex-direction: column; /* Apila verticalment la imatge i la informació. */
@@ -283,6 +285,13 @@ nav {
   border-radius: 22px; /* Arrodoneix les cantonades de la targeta. */
   box-shadow: 0 12px 28px color-mix(in srgb, var(--shadow-color) 12%, transparent); /* Afegeix una ombra suau sota la targeta. */
   transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease; /* Anima l'elevació, l'ombra i la vora. */
+}
+
+@media (min-width: 601px) and (max-width: 1000px) {
+  .dish-card {
+    flex-basis: calc((100% - 28px) / 2);
+    max-width: calc((100% - 28px) / 2);
+  }
 }
 
 .dish-card[hidden] {
@@ -576,7 +585,7 @@ footer p:last-child {
 @media (max-width: 600px) {
   .dish-card {
     flex-basis: 100%;
-    box-sizing: border-box;
+    max-width: 100%;
   }
 
   .filters {
@@ -597,3 +606,7 @@ footer p:last-child {
     text-align: center;
   }
 }
+
+/* Verificació final: navegació, hero, filtres, plats, begudes i footer amb Flexbox.
+   En mòbil, navegació, targetes i footer s'apilen; els filtres fan wrap i les begudes
+   conserven el desplaçament horitzontal. El formulari manté CSS Grid. */
