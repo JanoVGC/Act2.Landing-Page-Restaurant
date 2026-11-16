@@ -373,6 +373,82 @@ nav {
   font-weight: 700; /* Ressalta el preu amb un pes de lletra fort. */
 }
 
+/* Begudes: utilitza cards horitzontals amb scroll quan no hi caben totes. */
+.drinks-section {
+  width: min(1100px, 90%);
+  margin: 64px auto;
+  padding: 32px 24px;
+  border: 1px solid color-mix(in srgb, var(--accent-color) 45%, transparent);
+  border-radius: 24px;
+  background-color: color-mix(in srgb, var(--secondary-color) 12%, transparent);
+}
+
+.drinks-section h2 {
+  margin-bottom: 24px;
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+.drinks-list {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 4px 4px 14px;
+  scroll-snap-type: x mandatory;
+}
+
+.drink-card {
+  display: flex;
+  flex: 0 0 250px;
+  box-sizing: border-box;
+  align-items: center;
+  gap: 14px;
+  min-height: 132px;
+  padding: 18px;
+  border: 1px solid color-mix(in srgb, var(--accent-color) 35%, transparent);
+  border-radius: 16px;
+  background-color: var(--white-color);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--shadow-color) 10%, transparent);
+  scroll-snap-align: start;
+}
+
+.drink-icon {
+  display: flex;
+  flex: 0 0 48px;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  font-size: 1.6rem;
+}
+
+.drink-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.drink-name {
+  margin: 0 0 6px;
+  color: var(--primary-color);
+  font-family: var(--heading-font-family);
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+
+.drink-description {
+  margin: 0 0 8px;
+  color: #5f2d3d;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.drink-price {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
 /* ============================================
    FORMULARI DE RESERVA
    ============================================ */
