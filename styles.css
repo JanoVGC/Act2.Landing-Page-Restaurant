@@ -274,12 +274,18 @@ nav {
 .dish-card {
   flex: 1 1 300px; /* Permet que les targetes creixin, s'encongeixin i s'ajustin a l'amplada disponible. */
   min-width: 0; /* Evita que el contingut impedeixi que la targeta s'encongeixi. */
+  display: flex; /* Organitza la imatge i el contingut dins la targeta. */
+  flex-direction: column; /* Apila verticalment la imatge i la informació. */
   overflow: hidden; /* Retalla el contingut que sobresurti de les cantonades arrodonides. */
   background: color-mix(in srgb, var(--white-color) 96%, transparent); /* Crea un fons blanc lleugerament transparent. */
   border: 1px solid color-mix(in srgb, var(--accent-color) 35%, transparent); /* Dibuixa una vora daurada subtil. */
   border-radius: 22px; /* Arrodoneix les cantonades de la targeta. */
   box-shadow: 0 12px 28px color-mix(in srgb, var(--shadow-color) 12%, transparent); /* Afegeix una ombra suau sota la targeta. */
   transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease; /* Anima l'elevació, l'ombra i la vora. */
+}
+
+.dish-card[hidden] {
+  display: none;
 }
 
 /* Targeta en hover o focus intern: l'eleva i destaca la vora i l'ombra. */
@@ -308,12 +314,24 @@ nav {
 
 /* Contingut textual de cada targeta: crea marge interior. */
 .dish-content {
+  display: flex; /* Organitza el contingut de la targeta amb Flexbox. */
+  flex: 1; /* Omple l'alçada disponible perquè les targetes mantinguin una estructura uniforme. */
+  flex-direction: column; /* Apila el nom/preu, la descripció i els al·lèrgens. */
+  gap: 16px; /* Separa les parts de la informació. */
   padding: 22px 22px 24px; /* Afegeix espai interior als costats i a la part superior/inferior. */
+}
+
+/* Capçalera de la targeta: manté el nom i el preu a extrems oposats de la fila. */
+.dish-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 /* Nom del plat: ajusta la separació, el color, la mida i l'alçada de línia. */
 .dish-content h3 {
-  margin: 0 0 12px; /* Elimina el marge superior i separa el títol del text. */
+  margin: 0; /* Elimina els marges per deixar que el contenidor controli l'espaiat. */
   color: var(--primary-color); /* Aplica el color principal al nom del plat. */
   font-size: 1.35rem; /* Augmenta la mida respecte al text base. */
   line-height: 1.35; /* Defineix l'espai vertical entre línies del títol. */
@@ -321,14 +339,33 @@ nav {
 
 /* Descripció del plat: ajusta el marge, el color i la llegibilitat. */
 .dish-content p {
-  margin: 0 0 18px; /* Elimina el marge superior i separa la descripció del preu. */
+  flex-grow: 1; /* Ocupa l'espai disponible abans de la fila d'al·lèrgens. */
+  margin: 0; /* Deixa que el gap del contenidor defineixi l'espaiat. */
   color: #5f2d3d; /* Utilitza un to fosc de la paleta per al text descriptiu. */
   line-height: 1.7; /* Afegeix espai entre línies per facilitar-ne la lectura. */
+}
+
+/* Al·lèrgens: es distribueixen en una fila i poden passar a més línies. */
+.dish-allergens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.allergen-badge {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background-color: color-mix(in srgb, var(--accent-color) 20%, var(--white-color));
+  color: var(--primary-color);
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 /* Etiqueta del preu: es mostra com una píndola amb colors de la paleta. */
 .price {
   display: inline-block; /* Permet aplicar farciment i vores mantenint-lo en línia. */
+  flex: 0 0 auto; /* Evita que el preu s'encongeixi dins la capçalera. */
   padding: 9px 16px; /* Afegeix espai interior al voltant del preu. */
   border-radius: 999px; /* Arrodoneix completament l'etiqueta. */
   background: var(--secondary-color); /* Aplica el fons clar secundari. */
